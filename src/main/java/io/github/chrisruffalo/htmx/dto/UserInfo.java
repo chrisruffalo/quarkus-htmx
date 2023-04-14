@@ -1,5 +1,9 @@
 package io.github.chrisruffalo.htmx.dto;
 
+/**
+ * This is the information that goes back to the templates or back
+ * to the user on request.
+ */
 public class UserInfo {
     private String id;
 

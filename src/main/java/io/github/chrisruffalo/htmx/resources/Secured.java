@@ -10,20 +10,20 @@ import io.quarkus.qute.TemplateInstance;
 import io.quarkus.security.Authenticated;
 import io.quarkus.security.identity.SecurityIdentity;
 import io.smallrye.common.annotation.Blocking;
+import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.jboss.logging.Logger;
 
+/**
+ * A simple entry point for secured (requiring login) pages and resources.
+ */
 @Authenticated
 @Path("/secured")
 public class Secured {
-
-    @Inject
-    Logger logger;
 
     @Inject
     SecurityIdentity identity;

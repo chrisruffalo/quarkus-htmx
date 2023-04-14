@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 
 import java.util.Optional;
 
+/**
+ * Save the clicks that are made by users
+ */
 @Entity(name = "user_clicks")
 public class UserClicks extends PanacheEntityBase {
 
@@ -20,13 +23,12 @@ public class UserClicks extends PanacheEntityBase {
 
     @Blocking
     public static UserClicks forUser(final UserInfo info) {
-        final UserClicks uc = (UserClicks) UserClicks.findByIdOptional(info.getId()).orElseGet(() -> {
+        return (UserClicks) UserClicks.findByIdOptional(info.getId()).orElseGet(() -> {
             final UserClicks clicks = new UserClicks();
             clicks.id = info.getId();
             clicks.count = 0L;
             clicks.persist();
             return clicks;
         });
-        return uc;
     }
 }
