@@ -1,15 +1,47 @@
-<html lang="en">
-<head>
-    <title>Dashboard</title>
-    <script src="/webjars/htmx.org/dist/htmx.min.js"></script>
-</head>
-<body>
-    <h1>Welcome, {info.username}</h1>
-    <div id="clicks">{#include fragments/clicks clicks=info.clicks /}</div>
-    <p>
-    <button hx-get="/secured/clicks/increment" hx-target="#clicks">
-        increment clicks
-    </button>
-    </p>
-</body>
-</html>
+{#include bases/page.qute.html}
+    {#title}Dashboard{/title}
+    {#body}
+    <div class="row row-cards">
+        <div class="col-6">
+            <div class="card flex-grow-1 h-100">
+                <div class="card-header">
+                    <h3 class="card-title">User Info</h3>
+                </div>
+                <div class="card-body">
+                    <p>Welcome, {info.username}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card flex-grow-1 h-100">
+                <div class="card-header">
+                    <h3 class="card-title">Click Tracker</h3>
+                    <div class="card-actions">
+                        <button class="btn btn-primary" hx-get="/secured/clicks/increment" hx-target="#clicks">
+                            increment clicks
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="clicks">{#include fragments/clicks clicks=info.clicks /}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cards row-space">
+        <div class="col-12">
+            <div class="card flex-grow-1 h-100">
+                <div class="card-header">
+                    <h3 class="card-title">Tasks</h3>
+                    <div class="card-actions">
+                        <button type="button" class="btn btn-action" hx-get="/secured/tasks/add" hx-target="#task-holder">+</button>
+                    </div>
+                </div>
+                <div class="card-body" id="task-holder">
+                    {#include fragments/tasks tasks=info.tasks /}
+                </div>
+            </div>
+        </div>
+    </div>
+    {/body}
+{/include}

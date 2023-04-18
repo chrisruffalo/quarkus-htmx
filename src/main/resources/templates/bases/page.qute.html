@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/webjars/tabler__core/1.0.0-beta17/dist/css/tabler.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>{#insert title}Base{/}</title>
+</head>
+<body hx-debug>
+    <div class="container-dashboard d-flex flex-column min-vh-100">
+        <!-- Your navigation bar and sidebar code goes here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+            <a class="navbar-brand" href="#">Dasher</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-target">
+                {#insert navItems}{/}
+            </div>
+        </nav>
+        <div class="app-content flex-grow-1 content-wrapper">
+            <div id="body-root" class="container-xl">
+                {#insert body}No body!{/}
+            </div>
+        </div>
+        <div class="app-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center">&copy; 2023 Chris Ruffalo. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/webjars/tabler__core/1.0.0-beta17/dist/js/tabler.min.js"></script>
+    <script src="/webjars/htmx.org/dist/htmx.min.js"></script>
+</body>
+</html>

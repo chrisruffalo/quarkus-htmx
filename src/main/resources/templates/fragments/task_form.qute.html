@@ -1,0 +1,12 @@
+<form id="task-form">
+    <div class="form-group">
+        <label for="taskDescription">Task description:</label>
+        <input type="text" class="form-control" id="taskDescription" name="taskDescription" placeholder="Enter task description">
+        {#if task and task.id}
+            <button class="btn btn-primary" hx-post="/secured/tasks/{task.id}/update" hx-include="[name='taskDescription']" hx-target="#task-holder">Update</button>
+        {#else}
+            <button class="btn btn-primary" hx-post="/secured/tasks/create" hx-include="[name='taskDescription']" hx-target="#task-holder">Create</button>
+        {/if}
+        <button class="btn btn-secondary" hx-get="/secured/tasks" hx-target="#task-holder">Cancel</button>
+    </div>
+</form>

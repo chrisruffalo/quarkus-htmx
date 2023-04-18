@@ -1,0 +1,8 @@
+<tr id="task-{task.id}">
+    <td class="text-start"><input type="checkbox" class="form-check-input mx-auto" hx-swap="outerHTML" hx-trigger="click" hx-target="#task-{task.id}" {#if task.completed}hx-post="/secured/tasks/{task.id}/incompleted" checked{#else}hx-post="/secured/tasks/{task.id}/completed"{/if}></td>
+    <td class="text-start">{task.text}</td>
+    <td class="text-end">
+        <button type="button" class="btn btn-secondary btn-sm" hx-get="/secured/tasks/{task.id}/edit" hx-target="#task-holder">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm" hx-delete="/secured/tasks/{task.id}/delete" hx-target="#task-holder">Delete</button>
+    </td>
+</tr>

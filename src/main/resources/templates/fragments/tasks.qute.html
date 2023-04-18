@@ -1,0 +1,14 @@
+{!parameters: list of tasks!}
+{#if tasks}
+<table class="table table-vcenter">
+    <tbody>
+    {#for t in tasks}
+        {#include /fragments/task task=t /}
+    {/for}
+    </tbody>
+</table>
+{#else}
+<p class="text-center">
+    No tasks exist for this user.
+</p>
+{/if}

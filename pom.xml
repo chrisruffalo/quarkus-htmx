@@ -71,10 +71,16 @@
             <artifactId>quarkus-arc</artifactId>
         </dependency>
 
+        <!-- webjar support, these jars contain web content (css, javascript) that are version locked and served by the application -->
         <dependency>
             <groupId>org.webjars.npm</groupId>
             <artifactId>htmx.org</artifactId>
             <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>tabler__core</artifactId>
+            <version>1.0.0-beta17</version>
         </dependency>
 
         <dependency>

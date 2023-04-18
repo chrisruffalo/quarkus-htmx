@@ -1,0 +1,53 @@
+/* the body should be 100% of the view height */
+html, body {
+    height: 100vh;
+}
+
+/* content */
+.content-wrapper {
+    padding-top: 15px;
+}
+
+.row-space {
+    padding-top: 15px;
+}
+
+/* container */
+.container-dashboard {
+    position: relative;
+}
+
+.container-dashboard::before {
+    content: "";
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .container-dashboard::before {
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-dashboard::before {
+
+    }
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+/* footer */
+.app-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* adjust to your footer's height */
+}
+
+.app-footer p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 20px;
+}

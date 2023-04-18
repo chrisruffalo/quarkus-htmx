@@ -1,11 +1,11 @@
-<html lang="en">
-<head>
-    <title>Index</title>
-</head>
-<body>
-    <h1>Links:</h1>
-    <p>
-        <a href="/secured/dashboard.html">Dashboard</a>
-    </p>
-</body>
-</html>
+{#include bases/page.qute.html}
+    {#title}Index{/title}
+    {#body}
+        <div class="card hero-card">
+            <div class="card-body">
+                <h1 class="card-title">Login to Your Dashboard</h1>
+                <a href="/secured/dashboard.html" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    {/body}
+{/include}
